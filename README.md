@@ -59,15 +59,32 @@ To set up and run this project locally, follow these steps:
 7. **Access the Application**:
    Open your web browser and navigate to `http://127.0.0.1:8000/` to interact with the application.
 
-## API Keys
+## API Keys and URLs
 
-To utilize the weather and currency APIs, you need to acquire API keys. Refer to the project's configuration settings to input your API keys.
+To use the external APIs for weather and currency conversion, you need to acquire your own API keys and update the project’s configuration. Here is how you can set up your API keys and URLs:
+
+- **Currency Conversion API**:
+  - **API Key**: Obtain your API key from [ExchangeRate-API](https://www.exchangerate-api.com/).
+  - **API URL**: Format your URL as follows:
+    ```python
+    EXCHANGE_RATE_API_KEY = 'your_api_key_here'
+    EXCHANGE_RATE_API_URL = f'https://v6.exchangerate-api.com/v6/{EXCHANGE_RATE_API_KEY}/latest/USD'
+    ```
+
+- **Weather API**:
+  - **API Key**: Obtain your API key from [WeatherStack](https://weatherstack.com/).
+  - **API URL**: Format your URL as follows:
+    ```python
+    WEATHER_API_KEY = 'your_api_key_here'
+    WEATHER_API_URL = f'https://api.weatherstack.com/current?access_key={WEATHER_API_KEY}'
+    ```
+
+Replace `'your_api_key_here'` with your actual API key in the project's configuration files.
 
 ## Usage
 
 - **Weather Functionality**: Enter a city name or geographical coordinates to receive current weather updates.
 - **Currency Conversion**: Select the source and target currencies and input the amount for conversion.
-
 
 ## Contact
 

@@ -71,4 +71,4 @@ To utilize the weather and currency APIs, you need to acquire API keys. Refer to
 
 ## Contact
 
-For questions or further information, please reach out to me at [your-email@example.com](mailto:syedsherali263@gmail.com).
+For questions or further information, please reach out to me at [syedsherali263@gmail.com](mailto:syedsherali263@gmail.com).

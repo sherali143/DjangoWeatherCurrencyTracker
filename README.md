@@ -2,28 +2,34 @@
 
 ## Overview
 
-**Django Weather and Currency Tracker** is a sophisticated web application designed to deliver real-time weather updates and currency conversion services. Leveraging Django, a high-level Python web framework, this project integrates with various APIs to provide accurate and timely information on weather conditions and currency exchange rates.
+**Django Weather and Currency Tracker** is a sophisticated web application that provides real-time weather updates and currency conversion services. Built with Django, this application integrates with external APIs to offer accurate and current data on weather conditions and currency exchange rates.
 
 ## Features
 
-- **Real-Time Weather Information**: Access up-to-date weather details for any global location.
-- **Currency Conversion**: Convert amounts between different currencies with the latest exchange rates.
-- **User-Friendly Interface**: Designed for simplicity and ease of use, with an intuitive layout.
-- **Responsive Design**: Ensures a seamless experience across both desktop and mobile devices.
+- **Real-Time Weather Information**: Get up-to-date weather details for any location globally.
+- **Currency Conversion**: Convert amounts between different currencies using the latest exchange rates.
+- **User-Friendly Interface**: Simple and intuitive layout for ease of use.
+- **Responsive Design**: Ensures optimal experience across desktop and mobile devices.
 
 ## Technologies Used
 
-- **Django**: The core framework powering the backend, facilitating rapid development and robust design.
-- **Python**: The programming language employed for backend logic.
-- **External APIs**: Integrated services for real-time data retrieval:
-  - **Weather API**: Provides current weather information.
-  - **Currency Conversion API**: Delivers live exchange rates for currency conversion.
-- **HTML/CSS**: Technologies used for frontend structuring and styling.
-- **JavaScript**: Enhances interactivity and dynamic content on the user interface.
+- **Django**: The main framework powering the backend, facilitating rapid development and scalability.
+- **Python**: Used for backend logic and API interactions.
+- **External APIs**:
+  - **Weather API**: Provides real-time weather data.
+  - **Currency Conversion API**: Supplies live exchange rates for currency conversion.
+- **HTML/CSS**: For frontend structure and styling.
+- **JavaScript**: Enhances interactivity and dynamic content.
+
+## Django Integration with APIs
+
+- **Weather API Integration**: Django uses the [WeatherStack API](https://weatherstack.com/documentation) to fetch current weather data. Requests are made to the API to retrieve and display weather information on the application's frontend.
+
+- **Currency Conversion API Integration**: The [ExchangeRate-API](https://www.exchangerate-api.com/documentation) is integrated for currency conversion. Django handles requests to the API to get exchange rates and perform currency conversions based on user inputs.
 
 ## Installation
 
-To set up and run this project locally, follow these steps:
+To set up and run the project locally:
 
 1. **Clone the Repository**:
    ```bash
@@ -61,30 +67,39 @@ To set up and run this project locally, follow these steps:
 
 ## API Keys and URLs
 
-To use the external APIs for weather and currency conversion, you need to acquire your own API keys and update the project’s configuration. Here is how you can set up your API keys and URLs:
+To use the external APIs, you will need to obtain your own API keys and update the project configuration:
 
 - **Currency Conversion API**:
-  - **API Key**: Obtain your API key from [ExchangeRate-API](https://www.exchangerate-api.com/).
-  - **API URL**: Format your URL as follows:
+  - **API Key**: Obtain from [ExchangeRate-API](https://www.exchangerate-api.com/).
+  - **API URL**: Example format:
     ```python
-    EXCHANGE_RATE_API_KEY = 'your_api_key_here'
     EXCHANGE_RATE_API_URL = f'https://v6.exchangerate-api.com/v6/{EXCHANGE_RATE_API_KEY}/latest/USD'
     ```
 
 - **Weather API**:
-  - **API Key**: Obtain your API key from [WeatherStack](https://weatherstack.com/).
-  - **API URL**: Format your URL as follows:
+  - **API Key**: Obtain from [WeatherStack](https://weatherstack.com/).
+  - **API URL**: Example format:
     ```python
-    WEATHER_API_KEY = 'your_api_key_here'
     WEATHER_API_URL = f'https://api.weatherstack.com/current?access_key={WEATHER_API_KEY}'
     ```
 
-Replace `'your_api_key_here'` with your actual API key in the project's configuration files.
+Replace `'your_api_key_here'` with your actual API keys in the project’s configuration files.
 
 ## Usage
 
-- **Weather Functionality**: Enter a city name or geographical coordinates to receive current weather updates.
-- **Currency Conversion**: Select the source and target currencies and input the amount for conversion.
+- **Weather Functionality**: Enter a city name or coordinates to view current weather updates.
+- **Currency Conversion**: Select source and target currencies and input the amount for conversion.
+
+## Screenshots
+
+### Home Page
+![Home Page](https://github.com/user-attachments/assets/28ee902c-b70a-4e0a-bc3d-bb0b00bc6988)
+
+### Weather Check Page
+![Weather Check Page](https://github.com/user-attachments/assets/0785183c-9571-459b-b468-6df26c49ae74)
+
+### Currency Converter Page
+![Currency Converter Page](https://github.com/user-attachments/assets/ad02e860-14a9-4c52-8a1e-ebb13943c81e)
 
 ## Contact
 

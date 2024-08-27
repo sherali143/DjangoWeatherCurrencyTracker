@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="{% static 'currency.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar at the Top -->
+    <header>
+        <nav class="navbar">
+            <div class="navbar-brand">
+                <i class="fas fa-dollar-sign"></i> Currency Converter
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="{% url 'home' %}"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#"><i class="fas fa-exchange-alt"></i> Converter</a></li>
+                <li><a href="mailto:syedsherali263@gmail.com"><i class="fas fa-envelope"></i> Contact</a></li>
+                <li><a href="{% url 'weather_update' %}"><i class="fas fa-cloud"></i> Weather</a></li>
+            </ul>
+            <button class="return-home-button" onclick="window.location.href='{% url 'home' %}'">
+                <i class="fas fa-arrow-circle-left"></i> Return Home
+            </button>
+        </nav>
+        
+        
+    </header>
+
+    <!-- Main Container -->
+    <main>
+        <div class="container">
+            <!-- Currency Converter Form -->
+            <div class="converter-form-container">
+                <h2>Convert Your Currency</h2>
+                <form method="post" class="currency-form">
+                    {% csrf_token %}
+                    
+                    <input type="number" name="amount" placeholder="Enter amount" class="amount-input" required>
+
+                    <div class="currency-selection">
+                        {{ form.from_country }}
+                        <i class="fas fa-exchange-alt"></i>
+                        {{ form.to_country }}
+                    </div>
+
+                    <p class="base-currency-note">Base currency is USD.</p>
+
+                    <button type="submit" class="btn-submit">Convert</button>
+                </form>
+
+                <!-- Result Display -->
+                {% if convert_amount %}
+                <div class="result">
+                    <h2>Conversion Result</h2>
+                    <p>{{ amount }} {{ from_country }} to {{ to_country }} is <strong>{{ convert_amount }}</strong></p>
+                    
+                    <!-- Convert Again Button -->
+                    <a href="{% url 'currency_convert' %}" class="btn-convert-again">
+                        <i class="fas fa-redo-alt"></i> Convert Again
+                    </a>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    {% comment %} <footer>
+        <p>&copy; 2024 Currency Converter. All rights reserved.</p>
+    </footer> {% endcomment %}
+</body>
+</html>

@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="nav-left">
+                <h1>Sher's Code Cosmos</h1>
+                <ul class="nav-links">
+                    <li><a href="{% url 'home' %}"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="{% url 'weather_update' %}"><i class="fas fa-sun-cloud"></i> Weather</a></li>
+                    <li><a href="{% url 'currency_convert' %}"><i class="fas fa-money-bill-wave"></i> Currency Converter</a></li>
+                </ul>
+            </div>
+            <div class="nav-right">
+                <a href="https://github.com/sherali143?tab=repositories" class="icon-link" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/sher-ali-51a030309/" class="icon-link" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://twitter.com/yourprofile" class="icon-link" target="_blank"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+        
+    </header>
+    <main>
+        <section class="welcome-section">
+            <h1>Welcome to My Web Applications</h1>
+            <p>Explore two powerful tools:</p>
+        </section>
+        <section class="app-section">
+            <div class="app-card">
+                <i class="fas fa-cloud-sun card-icon"></i>
+                <h2>Weather API</h2>
+                <p>Get real-time weather updates and forecasts for any city.</p>
+                <a href="{% url 'weather_update' %}" class="button">Check Weather</a>
+            </div>
+            <div class="app-card">
+                <i class="fas fa-dollar-sign card-icon"></i>
+                <h2>Currency Converter</h2>
+                <p>Convert currencies with the latest exchange rates.</p>
+                <a href="{% url 'currency_convert' %}" class="button">Convert Currency</a>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Web Applications. Created by Sher Ali.</p>
+    </footer>
+</body>
+</html>

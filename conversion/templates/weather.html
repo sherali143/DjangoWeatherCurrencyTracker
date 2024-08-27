@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast</title>
+    <link rel="stylesheet" href="{% static 'weather.css' %}">
+    <!-- Include Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-brand">
+                <i class="fas fa-cloud-sun"></i> Weather Fetch API
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#"><i class="fas fa-cloud"></i> Weather</a></li>
+                <li><a href="{% url 'currency_convert' %}"><i class="fas fa-exchange-alt"></i> Currency Converter</a></li>
+            </ul>
+            <button class="return-home-button" onclick="window.location.href='{% url 'home' %}'">
+                <i class="fas fa-home"></i> Return Home
+            </button>
+            
+        </nav>
+        
+    </header>
+    <main>
+        <div class="container">
+            <section class="weather-form-container">
+                <h2>Get Weather Information</h2>
+                <form action="{% url 'weather_update' %}" method="get" class="weather-form">
+                    <input type="text" name="city" id="city" placeholder="Enter City" required>
+                    <button type="submit">Get Weather</button>
+                </form>
+            </section>
+            <section class="weather-info-container">
+                {% if data2 %}
+                    <div class="weather-card">
+                        <div class="weather-card-header">
+                            <h3>{{ data2.location.name }}, {{ data2.location.country }}</h3>
+                            <p>{{ data2.location.localtime }}</p>
+                        </div>
+                        <div class="weather-card-body">
+                            <img src="{{ data2.current.weather_icons.0 }}" alt="Weather Icon" class="weather-icon">
+                            <div class="weather-details">
+                                <p><strong>Temperature:</strong> {{ data2.current.temperature }} °C</p>
+                                <p><strong>Wind Speed:</strong> {{ data2.current.wind_speed }} km/h</p>
+                                <p><strong>Wind Direction:</strong> {{ data2.current.wind_degree }}°</p>
+                                <p><strong>Pressure:</strong> {{ data2.current.pressure }} hPa</p>
+                                <p><strong>Humidity:</strong> {{ data2.current.humidity }}%</p>
+                                <p><strong>Visibility:</strong> {{ data2.current.visibility }} km</p>
+                                <p><strong>Day/Night:</strong> {% if data2.current.is_day == "yes" %} Day {% else %} Night {% endif %}</p>
+                            </div>
+                        </div>
+                        <div class="weather-card-footer">
+                            <p><strong>Last Updated:</strong> {{ data2.current.observation_time }}</p>
+                        </div>
+                    </div>
+                {% else %}
+                    <p class="placeholder">Please enter a city to get the weather information.</p>
+                {% endif %}
+            </section>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 My Weather App. Created by Sher Ali.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,223 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #95a5a6;
+    color: #e0e0e0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Header and Navbar */
+header {
+    background-color: #2c3e50;
+    padding: 10px 0;
+    color: #fff;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ensures the navbar stays on top */
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between; /* Space out brand, menu, and button */
+    align-items: center;
+    padding: 0 20px;
+}
+
+.navbar-brand {
+    font-size: 18px;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand .fa-dollar-sign {
+    margin-right: 10px;
+}
+
+.navbar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    margin-left: 50px;
+}
+
+.navbar-menu li {
+    margin-left: 20px;
+}
+
+.navbar-menu li a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.navbar-menu li a:hover {
+    color: #f39c12;
+    transform: scale(1.1);
+}
+
+/* New Button for Returning Home */
+.return-home-button {
+    background-color: #f39c12;
+    color: #121212;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-left: auto; /* Adjusts the button position to the right */
+}
+
+.return-home-button:hover {
+    background-color: #e67e22;
+    transform: scale(1.05);
+}
+
+.return-home-button i {
+    margin-right: 5px;
+}
+
+/* Main Container */
+main {
+    padding: 80px 20px 20px; /* Adds padding to account for fixed navbar */
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* Converter Form Container */
+.converter-form-container {
+    background-color: #2c3e50;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+}
+
+.converter-form-container h2 {
+    margin-bottom: 20px;
+}
+
+/* Form Styles */
+.currency-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.currency-form input,
+.currency-form select {
+    padding: 12px;
+    border-radius: 25px;
+    border: none;
+    font-size: 16px;
+    outline: none;
+    background-color: #34495e;
+    color: #ecf0f1;
+}
+
+.currency-form button {
+    padding: 12px;
+    border-radius: 25px;
+    background-color: #f39c12;
+    color: #121212;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.currency-form button:hover {
+    background-color: #e67e22;
+    transform: scale(1.05);
+}
+
+/* Result Display */
+.result {
+    background-color: #34495e;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.result strong {
+    color: #f39c12;
+}
+
+/* Footer */
+/* Uncomment if footer needed
+footer {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 30px;
+}
+*/
+
+/* Misc */
+.currency-selection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.currency-selection i {
+    color: #f39c12;
+    font-size: 20px;
+}
+
+/* Convert Again Button */
+.btn-convert-again {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 20px;
+    border-radius: 25px;
+    background-color: #f39c12;
+    color: #121212;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-convert-again:hover {
+    background-color: #e67e22;
+    transform: scale(1.05);
+}
+
+.btn-convert-again i {
+    margin-right: 5px;
+}
+
+/* Base Currency Note */
+.base-currency-note {
+    margin: 10px 0;
+    font-size: 14px;
+    color: #f39c12;
+    text-align: center;
+    background-color: #2c3e50;
+    padding: 8px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
